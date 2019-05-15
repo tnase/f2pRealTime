@@ -1,14 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+         F2P Projet
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+ 
+  <div class="ion-padding" style="text-align: center;margin-top:65%">
+      <ion-item>
+          <ion-label position="floating">Login </ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating">password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    <div style="margin-left: 30%;padding-top:3%">
+      <ion-text color="primary" style="margin-right: 5% ;padding-top:5%" routerLink="/account" routerDirection="forward">Register</ion-text>
+     <ion-button size="small" >Connect</ion-button>
+    </div>
+    
+    
   </div>
 </ion-content>
