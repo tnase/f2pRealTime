@@ -1,6 +1,6 @@
 import { UserService } from './../../User/user.service';
 import { Component, OnInit } from '@angular/core';
-
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -11,36 +11,55 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class AccountPage implements OnInit {
+
+
  
     user = {
      name: String ,
-     username: String ,
+     email: String ,
      password : String ,
    } ;
      names;
      username;
      password ;
+   
 
-  constructor(public userService: UserService) { }
+  constructor(public userService: UserService,public toastController: ToastController) { }
 
   ngOnInit() {
   }
 
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'account create with success...',
+      position:'top',
+      duration: 2000
+    });
+    toast.present();
+  }
+
   setUserValue() {
     this.user.name = this.names;
-    this.user.username = this.username;
+    this.user.email = this.username;
     this.user.password = this.password;
   }
     
   createAccount(){
     this.setUserValue();
    this.userService.createUser(this.user)
-     .subscribe(arg => {
-       console.log("test");
+     .subscribe(data => {
+      this.names="";
+      this.username="";
+      this.password="";
+      this.presentToast();
+        console.log(data);
       },error=>{
-        console.log( "test1" );
+        alert(JSON.stringify(error))
+
       });
    
   }
+
+ 
 
 }

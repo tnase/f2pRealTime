@@ -7,8 +7,8 @@ export const environment = {
 };
 
 
-const url = 'http://10.20.107.6:7090/print/f2p/api/v1';
-
+//const url = 'http://10.20.107.6:7090/print/f2p/api/v1/';
+const url = 'https://randomuser.me/api/?results=10';
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
@@ -19,5 +19,7 @@ const url = 'http://10.20.107.6:7090/print/f2p/api/v1';
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
 
 export const API ={
-  SAVE_USER : `${url}user/save`
+  SAVE_USER : `${url}user/save` ,
+  LOGIN_USER : `${url}user/login` ,
+   GET_DATA_ONLINE: url  
 }

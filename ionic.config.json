@@ -1,5 +1,7 @@
 {
   "name": "f2p",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
